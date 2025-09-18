@@ -1,0 +1,35 @@
+name: Build and Test
+
+on:
+  pull_request:
+    branches: 
+      - main
+      - preview
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Enable pnpm via corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run build
+        run: pnpm build
+      
+      - name: Run tests
+        run: pnpm test
+
+      - name: Run Lint
+        run: "pnpm lint"
