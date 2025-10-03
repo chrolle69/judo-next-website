@@ -1,0 +1,4 @@
+                <svg width="30" height="20" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                    <rect className="top" y="6" width="25" height="1" fill="white" />
+                    <rect className="bottom" y="17" width="25" height="1" fill="white" />
+                </svg>
